@@ -18,9 +18,9 @@ DEST="$2" # destination directory
 # iterate over all input files
 for INF in `find "$PWD" -type f -path "$GLOB"`
 do
-    LIGAND=`basename "$INF" .pdbqt`   # ligand name
-    OUTF=`"$DEST/$LIGAND.out.pdbqt"`  # output file
-    LOGF=`"$DEST/$LIGAND.log"`        # log file
+    LIGAND=`basename "$INF" .pdbqt`  # ligand name
+    OUTF="$DEST/$LIGAND.out.pdbqt"   # output file
+    LOGF="$DEST/$LIGAND.log"         # log file
     
     mkdir -p "$DEST/$LIGAND"
 
