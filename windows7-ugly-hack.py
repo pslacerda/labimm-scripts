@@ -2,10 +2,8 @@
 # -*- encoding: utf-8 -*-
 
 #
-#   Tarefa: configurar máquinas Windows 7.
-# Problema: PowerShell é estranho, arquvos batch não funcionam,
-#           não há muitas Group Policies para Windows Home.
-#  Solução: Gerar um arquivo batch para configurar o sistema.
+# usage:
+#   $ python windows7-ugly-hack.py
 #
 
 #############################################
@@ -95,7 +93,7 @@ class Group (AttributeDict):
     def __init__(self, name, quota, members):
         self.name = name
         self.quota = quota * 1024**3
-        self.warn = self.quota * 0.85
+        self.warn = int(self.quota * 0.85)
         self.members = members
 
 
