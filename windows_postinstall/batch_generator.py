@@ -1,7 +1,8 @@
 # -*- encoding: utf-8 -*-
 import sys, json, collections
 
-############# MODELS
+# python3 -m http.server
+
 
 class Bag:
     def __init__(self):
