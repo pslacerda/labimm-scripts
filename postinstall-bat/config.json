@@ -1,0 +1,32 @@
+{
+    "home_drive": "D:",
+    "default_password": "labimm123",
+    "groups": [
+        {"name": "doutorado", "quota": 15},
+        {"name": "mestrado",  "quota": 10},
+        {"name": "iniciação", "quota": 5}
+    ],
+    "users": [
+        {
+            "group"    : "doutorado",
+            "name"     : "humbarato",
+            "fullname" : "Humberto Barato"
+        },
+        {
+            "group"    : "doutorado",
+            "name"     : "andré",
+            "fullname" : "André Vina"
+        },
+        {
+            "group"    : "mestrado",
+            "name"     : "camila",
+            "fullname" : "Camila Unknow"
+        },
+        {
+            "group"    : "iniciação",
+            "name"     : "kanvuanza",
+            "fullname" : "Pedro Lacerda"
+        }
+    ]
+}
+

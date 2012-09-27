@@ -1,0 +1,15 @@
+{
+    "home_drive": "D:",
+    "default_password": "labimm123",
+    "groups": [
+        {"name": "iniciação", "quota": 5}
+    ],
+    "users": [
+        {
+            "group"    : "iniciação",
+            "name"     : "usr1",
+            "fullname" : "User 1"
+        }
+    ]
+}
+
