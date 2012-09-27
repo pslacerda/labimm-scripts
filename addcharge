@@ -1,14 +1,84 @@
 #!/bin/bash
+#
+# addcharge - calcula e adiciona cargas à moleculas
+#
+# Site   : http://napolie.far.ufba.br
+# Autores: Pedro Sousa Lacerda <kanvuanza@gmail.com>
+#          Humberto Freitas <humbarato@gmail.com>
+#
+# -----------------------------------------------------------------------------
+# Este programa calcula e adiciona cargas à moleculas usando a metodologia tal,
+# bla, bah.
+#
+# Sinopse:
+#   addcharge INPUT [OUTPUT]
+#   addcharge --batch PATTERN OUTDIR
+#
+# Uso:
+#   Quando apenas o parâmetro INPUT é passado, nome do arquivo de saída tem o
+#   sufixo '-charged' adicionado logo antes da extensão. Por exemplo se INPUT
+#   for 'ligand.mol2', a saída OUTPUT será 'ligand-charged.mol2'.
+#
+#   Quando ambos INPUT e OUTPUT são passados, o arquivo de entrada e saída
+#   recebem seus nomes, respectivamente.
+#
+#   A flag --batch indica que todos os arquivos que casam com o padrão PATTERN
+#   serão convertidos e salvos no diretório OUTDIR.
+#
+# Exemplos:
+#   $ addcharge ar75.mol2
+#   $ addcharge ar01.mol2 ar01-c.mol2
+#   $ addcharge --batch /inputs/*.mol2 /outputs
+# -----------------------------------------------------------------------------
+#
 
-#
-# SCRIPT PARA ADIÇÃO DE CARGAS MOPAC (VERSÃO 2012) EM ARQUIVOS TRIPOS MOL2
-#
-# Aturoes: Humberto Freitas <humbarato@gmail.com>
-#          Pedro Lacerda <kanvuanza@gmail.com>
-#
+function usage {
+    echo "Usage: $0 INPUT [OUTPUT]"
+    echo "       $0 --batch PATTERN OUTDIR"
+}
 
-# Descomente essa linha quando estiver desenvolvendo ou utilizando este script.
-#set -eux
+if [[ $# > 3 ]];
+    usage
+    exit 1
+fi
+
+case $# in
+    1)
+        FORMAT="${1##*.}"
+        INPUT="$1"
+        OUTPUT="${1%.*}-charged.$FORMAT"
+        ;;
+    2)
+        FORMAT="${1##*.}"
+        INPUT="$1"
+        OUTPUT="$2"
+        ;;
+    3)
+        
+;
+for arg in "$@"
+do
+    case "$arg" in
+        --batch)
+            BATCH=1
+            PATTERN="$1"
+            OUTDIR="$2"
+        *)
+            which $0
+
+
+
+
+# Descomente para auxiliar na depuração.
+set -eux
+
+BATCH=0
+INPUT=
+OUTPUT=
+PATTERN=
+OUTDIR=
+
+
 
 if [[ $# != 1 ]];
 then
