@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+#
 function usage {
     sed -n '0,/# -\+$/d;/# -\+$/,$d;s/^#\s\?//g;p' "$0" > /dev/stderr
 }
