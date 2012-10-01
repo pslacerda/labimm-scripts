@@ -9,6 +9,12 @@ function error {
     put red "$@" > /dev/stderr
     exit 1
 }
+
+function quit {
+    echo "$2"
+    exit $1
+}
+
 ##
 # array-contains 
 #

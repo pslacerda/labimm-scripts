@@ -50,11 +50,10 @@ declare -r WORKSPACE=`mktemp -d`            # onde salvar arquivos temporários
 # Checa o arquivo de entrada
 #
 [[ ! -r "$IFILE" || ! -f "$IFILE" ]] && 
-    error "Não possível ler o conteúdo de \"$IFILE\"."
+    quit 1 "Não possível ler o conteúdo de \"$IFILE\"."
 
 
-put green "Sucesso!"
-exit 0
+quit 0 "Processado $IFILE."
 
 ## 
 # Converte o arquivo de entrada *.mol2 em *.mop
