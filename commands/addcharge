@@ -1,0 +1,146 @@
+#!/bin/bash
+#
+# addcharge - calcula e adiciona cargas a uma molécula
+#
+# Site   : http://napolie.far.ufba.br
+# Autores: Pedro Sousa Lacerda <kanvuanza@gmail.com>
+#          Humberto Freitas <humbarato@gmail.com>
+#
+# -----------------------------------------------------------------------------
+# Este programa calcula e adiciona cargas à moleculas usando a metodologia tal,
+# bla, bah.
+#
+# Sinopse
+#   addcharge -i INPUT -s SUFFIX -k MOPAC_KEYWORDS
+#   addcharge --batch -i INDIR -s SUFFIX -k MOPAC_KEYWORDS
+#
+# Descrição
+#   O programa lê o arquivo INPUT e escreve um novo arquivo com as cargas cujo
+#   ao nome é adicionado SUFFIX antes da extensão .mol2.
+#
+#   Quando a opção --batch é passada, o programa opera em lotes de arquivos.
+#   Para cada arquivo .mol2 no diretório INDIR é escrito um novo com as cargas
+#   cujo ao nome é adicionado SUFFIX antes da extensão .mol2.
+#
+#   As cargas da moléculas são computadas com o software MOPAC 2012 usano as
+#   keywords MOPAC_KEYWORDS. Somente arquivos no formato Tripos Mol2 são
+#   suportados.
+#
+# Parâmetros
+#   -b, --batch
+#       Opera em vários arquivos de uma vez.
+#    
+#   -i, --input INPUT
+#       Indica o arquivo de entrada, ou o diretório caso --batch seja
+#       informado.
+#
+#   -k, --keywords KEYWORDS
+#       Indica as keywords usadas na execução do MOPAC 2012.
+#
+#   -s, --suffix SUFFIX
+#       Os arquivos com as cargas recebem o mesmo nome do arquivo de entrada
+#       adicionado SUFFIX logo antes da extensão. Por exemplo, lê-se frag.mol2
+#       e ecreve-se fragSUFFIX.mol2.
+#
+# Exemplos
+#   Lê frag.mol2 e escreve frag_pm6.mol2.
+#       addcharge -i frag.mol2 -s _pm6 -k "PM6 KEYWORDS"
+#
+#   Lê todos os arquivos de /dir/frags e escreve os arquivos com carga no mesmo
+#   diretório, adicionado o sufixo _pm3 ao nome.
+#       addcharge -b -i /dir/frags -s _pm3 "PM3 KEYWORDS"
+# -----------------------------------------------------------------------------
+#
+
+#set -eux
+source helpers.sh
+
+##
+# Recebe parâmetros
+#
+eval set -- `options 'bi:k:s:' 'batch,input:,keywords:,suffix:' "$@"`
+
+declare BATCH=0 INPUT SUFFIX KEYWORDS
+
+while true; do
+    case "$1" in
+        -b|--batch) BATCH=1 ; shift ;;
+        -i|--input) INPUT="$2" ; shift 2 ;;
+        -s|--suffix) SUFFIX="$2" ; shift 2 ;;
+        -k|--keywords) KEYWORDS="$2" ; shift 2 ;;
+        --) shift ; break ;;
+        *) usage ; exit 1 ;;
+    esac
+done
+
+
+##
+# Valida parâmetros - muitos casos foram omissos 
+#
+test ! -r "$INPUT"  && die "Não é possível ler \"$INPUT\"."
+test -z "$SUFFIX"   && die "Informe um sufixo."
+test -z "$KEYWORDS" && die "Informe as keywords."
+test $BATCH -eq 0 && {
+    tmp=`dirname "$INPUT"`
+    test ! -f "$INPUT" && die "\"$INPUT\" não é um arquivo."
+    test ! -w "$tmp"   && die "Não é possível escrever em \"$tmp\"."
+}
+test $BATCH -eq 1 && {
+    test ! -d "$INPUT" && "\"$INPUT\" deve ser um diretório."
+    test ! -w "$INPUT" && "Não é possível escrever em \"$INPUT\"."
+}
+
+
+##
+# Computa lotes de arquivos
+#   pesquisamos todos os arquivos *.mol2 do diretório INPUT, e reexecutamos este
+#   script recursivamente para todos eles.
+#
+test $BATCH && {
+    find "$INPUT" -maxdepth 1 -type f -name '*.mol2' |\
+        tee |\
+        parallel $0 -i "{}" -s "$SUFFIX" -k "$KEYWORDS"
+
+    exit 0
+    
+}
+
+##
+# Computa somente um arquivo
+#
+declare OUTPUT=${INPUT%*.mol2}$SUFFIX.mol2  # arquivo de saída
+declare LIGAND=`basename "$INPUT" .mol2`    # nome do ligante
+declare WORKSPACE=`mktemp -d`               # diretório arquivos temporários
+
+
+echo  Input: $INPUT
+echo Output: $OUTPUT
+exit 0
+
+##
+# Converte o arquivo de entrada *.mol2 em *.mop
+#
+babel -imol2 "$INPUT" -omop 2> /dev/null      \
+    | sed "s/PUT KEYWORDS HERE/$KEYWORDS/g"   \
+    > "$WORKSPACE/$LIGAND.mop"
+
+
+##
+# Computa cargas do *.mop e as salva, junto com as posições, em *.out
+#
+mopac "$WORKSPACE/$LIGAND.mop" 2> /dev/null
+
+
+##
+# Converte o *.out no formato mol2 e exibe o conteúdo em OUTPUT
+#
+babel -imoo "$WORKSPACE/$LIGAND.out" -omol2 2> /dev/null   \
+    | sed "s/^\/tmp\/tmp\..*out$/$LIGAND/g"                \
+    > $OUTPUT
+
+##
+# Remove o diretório temporário
+# TODO verificar se reduz muito o tempo de execução
+#
+rm -r $WORKSPACE
+
