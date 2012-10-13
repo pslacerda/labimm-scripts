@@ -1,32 +1,64 @@
 #!/bin/bash
-
 #
-# vscreening.sh
-# ~~~~~~~~~~~~~
+# vscreening - triagem virtual com o Autodock Vina
+#
+# Site : http://napolie.far.ufba.br
+# Autor: Pedro Sousa Lacerda <kanvuanza@gmail.com>
+#
+#------------------------------------------------------------------------------
+#
+# Sinopse
+#   vscreening -c CONFIG -i INDIR [-o OUTDIR]
+#
 #
 
-if [[ $# != 2 ]]
-then
-    echo "  usage: $0 <IN_FILES_PATTERN> <OUT_DIR>"
-    echo "example: $0 \"fragments/*.pdbqt\" result"
-    exit 1
-fi
+source helpers.sh
 
-GLOB="$1" # pattern matching all input files
-DEST="$2" # destination directory
+##
+# Recebe parâmetros
+#
+eval set -- `options 'vc:i:o:' 'verbose,config:,indir:outdir:' "$@"`
 
-# iterate over all input files
-for INF in `find "$PWD" -type f -path "$GLOB"`
-do
-    LIGAND=`basename "$INF" .pdbqt`  # ligand name
-    OUTF="$DEST/$LIGAND.out.pdbqt"   # output file
-    LOGF="$DEST/$LIGAND.log"         # log file
-    
-    mkdir -p "$DEST/$LIGAND"
+declare INDIR CONFIG VERBOSE=0
 
-    # run vina
-    vina "$INF" "$OUTF" "$LOGF"
-
-    # keep processed and unprocessed files separated
-    mv "$INF" "$DEST/$LIGAND"
+while true; do
+    case "$1" in
+        -v|--verbose) VERBOSE=1 ; shift ;;
+        -c|--config) CONFIG="$2" ; shift 2 ;;
+        -i|--indir) INDIR="$2" ; shift 2 ;;
+        -o|--outdir) OUTDIR="$2" ; shift 2 ;;
+        --) shift ; break ;;
+        *) usage ; exit 1 ;;
+    esac
 done
+
+##
+# Valida parâmetros
+#
+test ! -d "$INDIR" -o ! -r "$INDIR" &&
+    die "\"$INDIR\" não é um diretório ou não é possível lê-lo."
+
+test ! -d "$OUTDIR" -o ! -w "$OUTDIR" &&
+    die "\"$OUTDIR\" não é um diretório ou não é possível escrevê-lo."
+
+test ! -f "$CONFIG" -o ! -r "$CONFIG" &&
+    die "Não é possível ler \"$CONFIG\"."
+
+##
+# Itera sobre todos os arquivos
+#
+for IFILE in "$INDIR"/*.pdbqt
+do
+    LIGAND=`basename "$file" .pdbqt` # nome do ligante
+    OFILE="$OUTDIR/$LIGAND.out"      # arquivo de saída
+    LFILE="$OUTDIR/$LIGAND.log"      # arquivo de log
+    
+    vina -c "$CONFIG" -i "$IFILE" -o "$OFILE" -l "$LFILE"
+
+    mv $.
+
+done
+
+
+
+
