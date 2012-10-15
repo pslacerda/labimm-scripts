@@ -15,20 +15,23 @@
 #   addcharge --batch -i INDIR -s SUFFIX -k MOPAC_KEYWORDS
 #
 # Descrição
-#   O programa lê o arquivo INPUT e escreve um novo arquivo com as cargas cujo
-#   ao nome é adicionado SUFFIX antes da extensão .mol2.
+#   O programa lê o arquivo INPUT e escreve um novo arquivo com as cargas, ao
+#   nome é adicionado o sufixo SUFFIX antes da extensão .mol2.
 #
 #   Quando a opção --batch é passada, o programa opera em lotes de arquivos.
-#   Para cada arquivo .mol2 no diretório INDIR é escrito um novo com as cargas
-#   cujo ao nome é adicionado SUFFIX antes da extensão .mol2.
+#   Para cada arquivo .mol2 no diretório INDIR, é escrito um novo com as cargas,
+#   e ao seu nome é adicionado SUFFIX antes da extensão .mol2.
 #
-#   As cargas da moléculas são computadas com o software MOPAC 2012 usano as
+#   As cargas da moléculas são computadas com o software MOPAC 2012 usando as
 #   keywords MOPAC_KEYWORDS. Somente arquivos no formato Tripos Mol2 são
 #   suportados.
 #
 # Parâmetros
 #   -b, --batch
 #       Opera em vários arquivos de uma vez.
+#
+#   -h, --help
+#       Imprime esta ajuda.
 #    
 #   -i, --input INPUT
 #       Indica o arquivo de entrada, ou o diretório caso --batch seja
@@ -42,6 +45,9 @@
 #       adicionado SUFFIX logo antes da extensão. Por exemplo, lê-se frag.mol2
 #       e ecreve-se fragSUFFIX.mol2.
 #
+#   -v, --verbose
+#       Lista arquivos processados.
+#
 # Exemplos
 #   Lê frag.mol2 e escreve frag_pm6.mol2.
 #       addcharge -i frag.mol2 -s _pm6 -k "PM6 KEYWORDS"
@@ -52,27 +58,37 @@
 # -----------------------------------------------------------------------------
 #
 
-#set -eux
+# set -eux
 source helpers.sh
+
+
 
 ##
 # Recebe parâmetros
 #
-eval set -- `options 'bi:k:s:' 'batch,input:,keywords:,suffix:' "$@"`
+eval set -- `options \
+    'bhi:k:s:v' \
+    'batch,help,input:,keywords:,suffix:,verbose' \
+    "$@"`
 
-declare BATCH=0 INPUT SUFFIX KEYWORDS
 
+declare BATCH=0 INPUT="" SUFFIX="" KEYWORDS="" VERBOSE=0
 while true; do
     case "$1" in
-        -b|--batch) BATCH=1 ; shift ;;
-        -i|--input) INPUT="$2" ; shift 2 ;;
-        -s|--suffix) SUFFIX="$2" ; shift 2 ;;
+        -b|--batch)    BATCH=1       ; shift 1 ;;
+        -i|--input)    INPUT="$2"    ; shift 2 ;;
         -k|--keywords) KEYWORDS="$2" ; shift 2 ;;
+        -s|--suffix)   SUFFIX="$2"   ; shift 2 ;;
+        -v|--verbose)  VERBOSE=1     ; shift 1 ;;
+        -h|--help)     usage         ; exit ;;
+
         --) shift ; break ;;
-        *) usage ; exit 1 ;;
+        *) echo "FOOOOO??"; exit 1 ;;
     esac
 done
 
+test -z "$INPUT" -o -z "$SUFFIX" -o -z "$KEYWORDS" &&
+    usage && exit 1
 
 ##
 # Valida parâmetros - muitos casos foram omissos 
@@ -90,19 +106,16 @@ test $BATCH -eq 1 && {
     test ! -w "$INPUT" && "Não é possível escrever em \"$INPUT\"."
 }
 
-
 ##
 # Computa lotes de arquivos
 #   pesquisamos todos os arquivos *.mol2 do diretório INPUT, e reexecutamos este
 #   script recursivamente para todos eles.
 #
-test $BATCH && {
-    find "$INPUT" -maxdepth 1 -type f -name '*.mol2' |\
-        tee |\
-        parallel $0 -i "{}" -s "$SUFFIX" -k "$KEYWORDS"
-
+test $BATCH -eq 1 && {
+    [ $VERBOSE -eq 1 ] && TMP=-v || TMP=
+    find "$INPUT" -maxdepth 1 -type f -name '*.mol2' -print0 |\
+        parallel -j0 -0 "$0 -i '{}' -s '$SUFFIX' -k '$KEYWORDS' $TMP"
     exit 0
-    
 }
 
 ##
@@ -112,9 +125,14 @@ declare OUTPUT=${INPUT%*.mol2}$SUFFIX.mol2  # arquivo de saída
 declare LIGAND=`basename "$INPUT" .mol2`    # nome do ligante
 declare WORKSPACE=`mktemp -d`               # diretório arquivos temporários
 
+test $VERBOSE -eq 1 && echo "Computando $INPUT"
 
-echo  Input: $INPUT
-echo Output: $OUTPUT
+##
+# Remova esta seção
+#
+echo "`tput setaf 1`  In:`tput sgr0` $INPUT"
+echo "`tput setaf 2` Out:`tput sgr0` $OUTPUT"
+sleep `shuf -i 1-3 -n 1`
 exit 0
 
 ##
@@ -124,12 +142,10 @@ babel -imol2 "$INPUT" -omop 2> /dev/null      \
     | sed "s/PUT KEYWORDS HERE/$KEYWORDS/g"   \
     > "$WORKSPACE/$LIGAND.mop"
 
-
 ##
 # Computa cargas do *.mop e as salva, junto com as posições, em *.out
 #
 mopac "$WORKSPACE/$LIGAND.mop" 2> /dev/null
-
 
 ##
 # Converte o *.out no formato mol2 e exibe o conteúdo em OUTPUT
@@ -140,7 +156,6 @@ babel -imoo "$WORKSPACE/$LIGAND.out" -omol2 2> /dev/null   \
 
 ##
 # Remove o diretório temporário
-# TODO verificar se reduz muito o tempo de execução
 #
 rm -r $WORKSPACE
 
