@@ -2,63 +2,106 @@
 #
 # vscreening - triagem virtual com o Autodock Vina
 #
-# Site : http://napolie.far.ufba.br
-# Autor: Pedro Sousa Lacerda <kanvuanza@gmail.com>
+# Autor: Pedro Sousa Lacerda <pdro.lacerda@gmail.com>
 #
 #------------------------------------------------------------------------------
 #
 # Sinopse
-#   vscreening -c CONFIG -i INDIR [-o OUTDIR]
+#   vscreening [-v] -c CONFIG -i INDIR -r RECEPTOR
+#
+#------------------------------------------------------------------------------
 #
 #
 
-source helpers.sh
+#set -eux
+
+usage() {
+    sed -n '0,/# -\+$/d;/# -\+$/,$d;s/^#\s\?//g;p' "$0" >&2
+}
+
+die() {
+    echo "$@" >&2
+    exit 1
+}
+
+options() {
+    getopt -q -n "$0" -o "$1" -l "$2" -- "${@:3:$#}"
+}
+
 
 ##
 # Recebe parâmetros
 #
-eval set -- `options 'vc:i:o:' 'verbose,config:,indir:outdir:' "$@"`
+eval set -- `options 'vc:i:r:' 'verbose,config:,indir:receptor:' "$@"`
 
-declare INDIR CONFIG VERBOSE=0
+declare INDIR= CONFIG= RECEPTOR= VERBOSE=0
 
 while true; do
     case "$1" in
         -v|--verbose) VERBOSE=1 ; shift ;;
         -c|--config) CONFIG="$2" ; shift 2 ;;
         -i|--indir) INDIR="$2" ; shift 2 ;;
-        -o|--outdir) OUTDIR="$2" ; shift 2 ;;
+        -r|--receptor) RECEPTOR="$2" ; shift 2 ;;
         --) shift ; break ;;
         *) usage ; exit 1 ;;
     esac
 done
 
+
 ##
 # Valida parâmetros
 #
+
+test -z "$CONFIG" -o -z "$INDIR" -o -z "$RECEPTOR" &&
+    usage && die
+
 test ! -d "$INDIR" -o ! -r "$INDIR" &&
     die "\"$INDIR\" não é um diretório ou não é possível lê-lo."
-
-test ! -d "$OUTDIR" -o ! -w "$OUTDIR" &&
-    die "\"$OUTDIR\" não é um diretório ou não é possível escrevê-lo."
 
 test ! -f "$CONFIG" -o ! -r "$CONFIG" &&
     die "Não é possível ler \"$CONFIG\"."
 
+test ! -f "$RECEPTOR" -o ! -r "$RECEPTOR" &&
+    die "Não é possível ler \"$RECEPTOR\"."
+
+##
+# Cria lista de ligantes e checkpoint, caso não existam
+#
+declare LIGANDSFILE='_ligands'
+declare CHECKPOINT='_checkpoint'
+declare ERRORS='_errors'
+
+test ! -f "$LIGANDSFILE" &&
+    find "$INDIR" -maxdepth 1 -path '*.pdbqt' -type f | sort > "$LIGANDSFILE"
+
+test ! -f "$CHECKPOINT" &&
+   touch "$CHECKPOINT"
+
+##
+# Descobre os ligantes não computados
+#
+TODO=`mktemp`
+TMP1=`cat "$LIGANDSFILE" | wc -l`
+TMP2=`cat "$CHECKPOINT" | wc -l`
+tail -n$(($TMP1 - $TMP2)) "$LIGANDSFILE" > "$TODO"
+
+
 ##
 # Itera sobre todos os arquivos
 #
-for IFILE in "$INDIR"/*.pdbqt
+TOTAL=$TMP1
+I=$TMP2
+for IFILE in `cat $TODO`
 do
-    LIGAND=`basename "$file" .pdbqt` # nome do ligante
-    OFILE="$OUTDIR/$LIGAND.out"      # arquivo de saída
-    LFILE="$OUTDIR/$LIGAND.log"      # arquivo de log
+    LIGAND=`basename "$IFILE" .pdbqt` # nome do ligante
+    OFILE="$INDIR/$LIGAND.out.pdbqt"        # arquivo de saída
+    LFILE="$INDIR/$LIGAND.log"              # arquivo de log
     
-    vina -c "$CONFIG" -i "$IFILE" -o "$OFILE" -l "$LFILE"
-
-    mv $.
-
+    I=$((I+1))
+    echo -n "Computando [$I/$TOTAL] $IFILE."
+    vina --config "$CONFIG" --out "$OFILE" --log "$LFILE" --ligand "$IFILE" \
+        > /dev/null \
+        && echo "$IFILE" >> "$CHECKPOINT" \
+        || echo "$IFILE" >> "$ERRORS"
+    echo " Pronto."
 done
-
-
-
-
