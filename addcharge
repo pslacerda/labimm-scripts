@@ -61,12 +61,10 @@
 # set -eux
 source helpers.sh
 
-
-
 ##
 # Recebe parâmetros
 #
-eval set -- `options \
+eval `options \
     'bhi:k:s:v' \
     'batch,help,input:,keywords:,suffix:,verbose' \
     "$@"`
