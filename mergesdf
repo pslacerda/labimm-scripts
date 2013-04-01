@@ -1,0 +1,65 @@
+
+#!/usr/bin/env python3
+
+import errno
+import io
+import sys
+
+
+class Molecule(collections.namedtuple('BaseMolecule', 'fname name begin end')):
+    def __hash__(self):
+        return self.name.__hash__()
+
+    def __eq__(self, other):
+        if not isinstance(other, Molecule):
+            return False
+        return self.name == other.name
+
+
+molecules = set()
+
+for fname in sys.argv[1:]:
+    try:
+        fp = io.open(fname, 'r')
+        fline = 0
+    except IOError as e:
+        if e.errno == errno.EACCESS:
+            exit(1)
+        raise
+    else:
+        newmolecule = True
+        for line in fp:
+            fline += 1
+
+            if newmolecule:
+                name = line.strip()
+                begin = fline - 1
+                newmolecule = False
+                continue
+            elif '$$$$' == line.strip():
+                end = fline
+                molecules.add(Molecule(fname, name, begin, end))
+                newmolecule = True
+                continue
+        fp.close()
+
+molecules = sorted(molecules, key=lambda m: m.begin)
+molecules.sort(key=lambda m: m.fname)
+
+for fname in sys.argv[1:]:
+    file = open(fname, 'r')
+    linen = 0
+    for mol in (mol for mol in molecules if mol.fname == fname):
+
+        while linen != mol.begin:
+            line = file.readline()
+            linen += 1
+        
+        contents = io.StringIO(line)
+        
+        while linen != mol.end:
+            contents.write(file.readline())
+            linen += 1
+
+        sys.stdout.write(contents.getvalue())
+    file.close()
