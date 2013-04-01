@@ -6,10 +6,12 @@ import io
 import sys
 
 
+BaseMolecule = collections.namedtuple('BaseMolecule', 'fname name begin end')
 
-class Molecule(collections.namedtuple('BaseMolecule', 'fname name begin end')):
-    """ A NamedTuple implementation that supports hashing based on molecule
-    name.
+class Molecule(BaseMolecule):
+    """A NamedTuple implementation that supports hashing based on molecule
+    name. Two molecules with same name but different names results in the same
+    hash.
     
     """
     def __hash__(self):
@@ -20,38 +22,39 @@ class Molecule(collections.namedtuple('BaseMolecule', 'fname name begin end')):
             return False
         return self.name == other.name
 
-def createindex(fname):
-    molecules = set()
 
-    try:
-        file = io.open(fname, 'r')
-        linen = 0
-    except IOError as err:
-        if err.errno == errno.EACCESS:
-            exit(1)
-        raise
-    else:
-        newmol = True
-        for line in file:
-            linen += 1
+class Index(set):
+    """Store molecules disallowing repeatition.
+    
+    """
+    def __init__(self, indexes):
+        for idx in indexes:
+            self.update(idx)
+
+    def sort(self):
+        return sorted(sorted(self, key=lambda m: m.begin),
+                                   key=lambda m: m.name)
+
+    def filter(key=lambda m: True):
+        return Index(m for m in self if lambda(m))
+
+
+def createindex(ifile):
+    index = Index()
+    with open(ifile, 'r') as ifile:
+        linen, newmol = 0, True
+        for line in ifile:
             if newmol:
                 name = line.strip()
-                begin = linen - 1
+                begin = linen
                 newmol = False
-
             elif '$$$$' == line.strip():
-                end = linen
-                molecules.add(Molecule(fname, name, begin, end))
-        file.close()
-    return molecules
+                end = linen + 1
+                index.add(Molecule(ifile.name, name, begin, end))
+            linen += 1
+    return index
 
-
-def sortindexes(indexes):
-    mols = set()
-    map(mols.update, indexes)
-    mols = sorted(mols, key=lambda m: m.begin)
-    mols = sorted(mols, key=lambda m: m.name)
-    return mols
+def extract()
 
 def fetch(index, ifile, ofile=None):
     try:
@@ -84,6 +87,6 @@ def fetch(index, ifile, ofile=None):
 if __name__ == "__main__":
     ifiles = sys.argv[1:]
     index = (createindex(f) for f in ifiles)
-    index = sortindexes(index)
+    index = sortindex(index)
     for ifile in ifiles:
         fetch(index, (m for m in index if m.fname == ifile))
