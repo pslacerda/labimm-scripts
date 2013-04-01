@@ -1,0 +1,89 @@
+#!/usr/bin/python3
+
+import collections
+import errno
+import io
+import sys
+
+
+
+class Molecule(collections.namedtuple('BaseMolecule', 'fname name begin end')):
+    """ A NamedTuple implementation that supports hashing based on molecule
+    name.
+    
+    """
+    def __hash__(self):
+        return self.name.__hash__()
+
+    def __eq__(self, other):
+        if not isinstance(other, Molecule):
+            return False
+        return self.name == other.name
+
+def createindex(fname):
+    molecules = set()
+
+    try:
+        file = io.open(fname, 'r')
+        linen = 0
+    except IOError as err:
+        if err.errno == errno.EACCESS:
+            exit(1)
+        raise
+    else:
+        newmol = True
+        for line in file:
+            linen += 1
+            if newmol:
+                name = line.strip()
+                begin = linen - 1
+                newmol = False
+
+            elif '$$$$' == line.strip():
+                end = linen
+                molecules.add(Molecule(fname, name, begin, end))
+        file.close()
+    return molecules
+
+
+def sortindexes(indexes):
+    mols = set()
+    map(mols.update, indexes)
+    mols = sorted(mols, key=lambda m: m.begin)
+    mols = sorted(mols, key=lambda m: m.name)
+    return mols
+
+def fetch(index, ifile, ofile=None):
+    try:
+        ifile = open(ifile, 'r')
+        if ofile is None:
+            ofile = open(ofile, 'w')
+        else:
+            ofile = sys.stdout
+    except IOError as err:
+        if err.errno == errno.EACCESS:
+            exit(1)
+        raise
+    else:
+        linen = 0
+        for mol in index:
+            while linen != mol.begin:
+                line = ifile.readline()
+                linen += 1
+
+            ofile.write(line)
+
+            while linen != mol.end:
+                ofile.write(ifile.readli)
+                contents.write(ifile.readline())
+                linen += 1
+
+        if ofile is not sys.stdout:
+            ofile.close()
+
+if __name__ == "__main__":
+    ifiles = sys.argv[1:]
+    index = (createindex(f) for f in ifiles)
+    index = sortindexes(index)
+    for ifile in ifiles:
+        fetch(index, (m for m in index if m.fname == ifile))
