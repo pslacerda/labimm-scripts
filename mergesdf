@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-
+"""
+    Usage:
+        mergesdf file1.sdf file2.sdf file3.sdf
+"""
 import collections
 import errno
 import io
