@@ -1,0 +1,10 @@
+ATOM     35  CH  THS Y   7      -0.341  25.689  30.208   1.000
+ATOM     36  CH1 THS Y   7       1.131  26.034  29.975   1.000
+ATOM     37  CH2 THS Y   7      -1.269  26.672  29.500   1.000
+ATOM     38  OT  THS Y   7      -0.600  24.366  29.748   1.000
+ATOM     39  HO  THS Y   7      -1.484  24.099  29.977   1.000
+CONECT   36   35               
+CONECT   35   38               
+CONECT   35   37               
+CONECT   38   39               
+REMARK Residue 8

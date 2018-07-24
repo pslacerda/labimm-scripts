@@ -1,0 +1,8 @@
+ATOM     76  C2  EOL Z  15       6.438  23.443  23.888   1.000
+ATOM     77  C1  EOL Z  15       5.937  23.872  22.508   1.000
+ATOM     78  O   EOL Z  15       6.400  22.019  23.990   1.000
+ATOM     79  H1  EOL Z  15       6.878  21.670  23.245   1.000
+CONECT   76   77               
+CONECT   76   78               
+CONECT   78   79               
+REMARK Residue 16

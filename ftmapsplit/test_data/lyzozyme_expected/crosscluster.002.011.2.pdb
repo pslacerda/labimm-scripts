@@ -1,0 +1,19 @@
+ATOM      5  C1  BDY X   2       9.319  24.025  26.143   1.000
+ATOM      6  C2  BDY X   2       8.535  24.102  27.317   1.000
+ATOM      7  C3  BDY X   2       9.129  23.851  28.569   1.000
+ATOM      8  C4  BDY X   2      10.500  23.527  28.626   1.000
+ATOM      9  C5  BDY X   2      11.297  23.488  27.466   1.000
+ATOM     10  C6  BDY X   2      10.699  23.737  26.219   1.000
+ATOM     11  C7  BDY X   2       8.684  24.221  24.836   1.000
+ATOM     12  H1  BDY X   2       9.318  23.980  23.984   1.000
+ATOM     13  O1  BDY X   2       7.549  24.607  24.688   1.000
+CONECT    5    6               
+CONECT    5   10               
+CONECT    6    7               
+CONECT    7    8               
+CONECT    8    9               
+CONECT    9   10               
+CONECT    5   11               
+CONECT   11   12               
+CONECT   11   13               
+REMARK Residue 3

@@ -1,0 +1,12 @@
+ATOM      1  N1  ACD Z   1       4.275  22.327  24.521   1.000
+ATOM      2  C2  ACD Z   1       2.949  22.333  24.721   1.000
+ATOM      3  C3  ACD Z   1       2.527  23.249  25.847   1.000
+ATOM      4  O4  ACD Z   1       2.144  21.673  24.077   1.000
+ATOM      5  H1  ACD Z   1       4.674  21.763  23.799   1.000
+ATOM      6  H2  ACD Z   1       4.884  22.886  25.082   1.000
+CONECT    1    2               
+CONECT    1    5               
+CONECT    1    6               
+CONECT    2    3               
+CONECT    2    4               
+REMARK Residue 2

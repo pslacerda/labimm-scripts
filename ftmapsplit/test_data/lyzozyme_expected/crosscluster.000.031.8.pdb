@@ -1,0 +1,6 @@
+ATOM     39  C1  DME Z   8       2.420  22.395  24.800   1.000
+ATOM     40  O1  DME Z   8       3.772  22.062  25.117   1.000
+ATOM     41  C2  DME Z   8       4.668  23.021  24.550   1.000
+CONECT   39   40               
+CONECT   40   41               
+REMARK Residue 9

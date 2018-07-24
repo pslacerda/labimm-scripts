@@ -1,0 +1,8 @@
+ATOM    105  C2  EOL Z  20       2.514  22.398  24.796   1.000
+ATOM    106  C1  EOL Z  20       3.736  23.145  24.265   1.000
+ATOM    107  O   EOL Z  20       2.947  21.269  25.556   1.000
+ATOM    108  H1  EOL Z  20       2.169  20.779  25.785   1.000
+CONECT  105  106               
+CONECT  105  107               
+CONECT  107  108               
+REMARK Residue 21

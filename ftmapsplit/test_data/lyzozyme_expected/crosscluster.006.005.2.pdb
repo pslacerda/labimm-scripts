@@ -1,0 +1,4 @@
+ATOM      4  C1  ETH T   2       2.806  23.180  25.841   1.000
+ATOM      5  C2  ETH T   2       2.669  22.314  24.577   1.000
+CONECT    4    5               
+REMARK Residue 3

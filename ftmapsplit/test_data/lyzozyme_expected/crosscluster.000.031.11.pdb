@@ -1,0 +1,6 @@
+ATOM     56  C1  ACN Z  11       5.570  24.155  21.782   1.000
+ATOM     57  C2  ACN Z  11       5.871  25.325  22.600   1.000
+ATOM     58  N   ACN Z  11       6.109  26.258  23.246   1.000
+CONECT   56   57               
+CONECT   57   58               
+REMARK Residue 12

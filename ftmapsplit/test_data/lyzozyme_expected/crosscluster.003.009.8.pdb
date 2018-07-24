@@ -1,0 +1,4 @@
+ATOM     41  C1  ETH W   8      -1.282  32.763   9.237   1.000
+ATOM     42  C2  ETH W   8      -2.637  32.970   8.533   1.000
+CONECT   41   42               
+REMARK Residue 9

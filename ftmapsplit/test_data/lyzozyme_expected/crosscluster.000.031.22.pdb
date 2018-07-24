@@ -1,0 +1,10 @@
+ATOM    117  CH  THS Z  22       5.757  25.045  22.058   1.000
+ATOM    118  CH1 THS Z  22       4.929  24.002  22.803   1.000
+ATOM    119  CH2 THS Z  22       6.851  24.401  21.221   1.000
+ATOM    120  OT  THS Z  22       4.914  25.802  21.199   1.000
+ATOM    121  HO  THS Z  22       4.675  25.270  20.451   1.000
+CONECT  118  117               
+CONECT  117  120               
+CONECT  117  119               
+CONECT  120  121               
+REMARK Residue 23

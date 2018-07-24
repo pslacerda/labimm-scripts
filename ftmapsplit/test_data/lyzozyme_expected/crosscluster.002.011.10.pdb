@@ -1,0 +1,12 @@
+ATOM     54  C   BUT X  10       9.307  24.178  28.905   1.000
+ATOM     55  C1  BUT X  10      10.468  23.924  27.927   1.000
+ATOM     56  C2  BUT X  10       7.961  24.193  28.160   1.000
+ATOM     57  C3  BUT X  10       9.514  25.500  29.665   1.000
+ATOM     58  O   BUT X  10       9.283  23.138  29.845   1.000
+ATOM     59  H1  BUT X  10       9.291  22.332  29.342   1.000
+CONECT   54   55               
+CONECT   54   56               
+CONECT   54   57               
+CONECT   54   58               
+CONECT   58   59               
+REMARK Residue 11

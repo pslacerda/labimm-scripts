@@ -1,0 +1,13 @@
+ATOM      1  C1  CHX U   1      -0.141  24.213  34.610   1.000
+ATOM      2  C2  CHX U   1      -0.478  22.770  35.007   1.000
+ATOM      3  C3  CHX U   1       0.796  21.956  35.259   1.000
+ATOM      4  C4  CHX U   1       1.720  21.989  34.037   1.000
+ATOM      5  C5  CHX U   1       2.057  23.430  33.634   1.000
+ATOM      6  C6  CHX U   1       0.786  24.250  33.389   1.000
+CONECT    1    2               
+CONECT    1    6               
+CONECT    2    3               
+CONECT    3    4               
+CONECT    4    5               
+CONECT    5    6               
+REMARK Residue 2

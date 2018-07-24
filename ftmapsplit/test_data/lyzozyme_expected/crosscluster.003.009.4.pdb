@@ -1,0 +1,12 @@
+ATOM     14  N1  ACD W   4      -3.198  33.112   8.484   1.000
+ATOM     15  C2  ACD W   4      -2.292  32.643   9.356   1.000
+ATOM     16  C3  ACD W   4      -0.860  32.895   8.937   1.000
+ATOM     17  O4  ACD W   4      -2.567  32.063  10.398   1.000
+ATOM     18  H1  ACD W   4      -4.176  33.005   8.661   1.000
+ATOM     19  H2  ACD W   4      -2.911  33.577   7.647   1.000
+CONECT   14   15               
+CONECT   14   18               
+CONECT   14   19               
+CONECT   15   16               
+CONECT   15   17               
+REMARK Residue 5

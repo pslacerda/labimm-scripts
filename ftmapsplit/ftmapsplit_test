@@ -1,0 +1,26 @@
+#!/bin/bash
+
+RETVALUE=0
+cd test_data
+
+for PDB in *pdb
+do
+    MOL=${PDB%.pdb}
+
+    EXPECTED_DIR=${MOL}_expected
+    RESULT_DIR=${MOL}_result
+
+    rm -rf $RESULT_DIR
+    mkdir $RESULT_DIR
+    cd $RESULT_DIR
+    python3 ../../ftmapsplit ../$PDB
+    cd ..
+
+    diff -rq $RESULT_DIR $EXPECTED_DIR
+    if [ $? != 0 ]
+    then
+        RETVALUE=1
+    fi
+done
+
+exit $RETVALUE

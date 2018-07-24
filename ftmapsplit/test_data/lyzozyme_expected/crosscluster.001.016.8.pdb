@@ -1,0 +1,16 @@
+ATOM     40  C   URE Y   8       0.487  25.502  29.553   1.000
+ATOM     41  O   URE Y   8       0.762  26.678  29.750   1.000
+ATOM     42  N1  URE Y   8      -0.644  25.084  29.942   1.000
+ATOM     43  N2  URE Y   8       1.350  24.779  28.970   1.000
+ATOM     44  H1  URE Y   8      -1.314  25.700  30.400   1.000
+ATOM     45  H2  URE Y   8      -0.956  24.120  29.820   1.000
+ATOM     46  H3  URE Y   8       2.253  25.150  28.673   1.000
+ATOM     47  H4  URE Y   8       1.190  23.794  28.762   1.000
+CONECT   40   41               
+CONECT   42   40               
+CONECT   42   44               
+CONECT   42   45               
+CONECT   43   40               
+CONECT   43   46               
+CONECT   43   47               
+REMARK Residue 9

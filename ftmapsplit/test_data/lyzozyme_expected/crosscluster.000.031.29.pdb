@@ -1,0 +1,13 @@
+ATOM    147  C1  CHX Z  29       7.166  25.225  22.711   1.000
+ATOM    148  C2  CHX Z  29       6.273  25.599  23.898   1.000
+ATOM    149  C3  CHX Z  29       6.523  27.045  24.346   1.000
+ATOM    150  C4  CHX Z  29       8.002  27.277  24.674   1.000
+ATOM    151  C5  CHX Z  29       8.898  26.903  23.488   1.000
+ATOM    152  C6  CHX Z  29       8.646  25.458  23.039   1.000
+CONECT  147  148               
+CONECT  147  152               
+CONECT  148  149               
+CONECT  149  150               
+CONECT  150  151               
+CONECT  151  152               
+REMARK Residue 30

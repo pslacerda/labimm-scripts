@@ -1,0 +1,8 @@
+ATOM     34  C1  AMN V   7       9.292  23.237  17.849   1.000
+ATOM     35  N1  AMN V   7       8.428  22.946  19.002   1.000
+ATOM     36  H1  AMN V   7       8.543  21.979  19.280   1.000
+ATOM     37  H2  AMN V   7       7.458  23.057  18.731   1.000
+CONECT   34   35               
+CONECT   35   36               
+CONECT   35   37               
+REMARK Residue 8

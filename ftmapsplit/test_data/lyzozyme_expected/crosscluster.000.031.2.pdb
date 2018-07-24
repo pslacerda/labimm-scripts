@@ -1,0 +1,8 @@
+ATOM      7  C   ACT Z   2       3.169  22.571  25.294   1.000
+ATOM      8  O   ACT Z   2       2.943  21.373  25.413   1.000
+ATOM      9  CH1 ACT Z   2       3.832  23.142  24.060   1.000
+ATOM     10  CH2 ACT Z   2       2.809  23.563  26.378   1.000
+CONECT    9    7               
+CONECT    7    8               
+CONECT    7   10               
+REMARK Residue 3

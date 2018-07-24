@@ -1,0 +1,12 @@
+ATOM     35  C2  DFO W   7      -3.205  32.414   9.615   1.000
+ATOM     36  N3  DFO W   7      -2.278  32.913   8.774   1.000
+ATOM     37  O4  DFO W   7      -2.956  31.870  10.683   1.000
+ATOM     38  C3  DFO W   7      -2.686  33.546   7.522   1.000
+ATOM     39  C1  DFO W   7      -0.867  32.810   9.137   1.000
+ATOM     40  H1  DFO W   7      -4.208  32.549   9.223   1.000
+CONECT   35   36               
+CONECT   35   37               
+CONECT   36   38               
+CONECT   36   39               
+CONECT   35   40               
+REMARK Residue 8

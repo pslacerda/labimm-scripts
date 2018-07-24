@@ -1,0 +1,13 @@
+ATOM      7  CG  BEN U   2       2.219  22.941  33.327   1.000
+ATOM      8  CD1 BEN U   2       1.778  21.765  33.978   1.000
+ATOM      9  CE1 BEN U   2       0.500  21.728  34.582   1.000
+ATOM     10  CZ  BEN U   2      -0.338  22.866  34.535   1.000
+ATOM     11  CE2 BEN U   2       0.103  24.042  33.884   1.000
+ATOM     12  CD2 BEN U   2       1.381  24.079  33.279   1.000
+CONECT    7    8               
+CONECT    7   12               
+CONECT    8    9               
+CONECT   12   11               
+CONECT    9   10               
+CONECT   11   10               
+REMARK Residue 3

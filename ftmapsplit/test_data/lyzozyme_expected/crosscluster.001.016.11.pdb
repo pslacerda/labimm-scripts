@@ -1,0 +1,6 @@
+ATOM     58  C1  DME Y  11       1.821  25.418  29.610   1.000
+ATOM     59  O1  DME Y  11       0.823  26.443  29.605   1.000
+ATOM     60  C2  DME Y  11      -0.464  25.898  29.907   1.000
+CONECT   58   59               
+CONECT   59   60               
+REMARK Residue 12

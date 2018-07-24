@@ -1,0 +1,10 @@
+ATOM     21  CH  THS V   5       9.102  23.604  17.411   1.000
+ATOM     22  CH1 THS V   5       8.936  24.861  16.558   1.000
+ATOM     23  CH2 THS V   5       9.105  23.922  18.904   1.000
+ATOM     24  OT  THS V   5       8.051  22.690  17.115   1.000
+ATOM     25  HO  THS V   5       7.207  23.057  17.351   1.000
+CONECT   22   21               
+CONECT   21   24               
+CONECT   21   23               
+CONECT   24   25               
+REMARK Residue 6

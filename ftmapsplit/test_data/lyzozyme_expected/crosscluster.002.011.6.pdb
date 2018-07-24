@@ -1,0 +1,12 @@
+ATOM     31  C2  DFO X   6      10.877  23.397  27.419   1.000
+ATOM     32  N3  DFO X   6       9.855  23.840  28.175   1.000
+ATOM     33  O4  DFO X   6      10.913  23.443  26.198   1.000
+ATOM     34  C3  DFO X   6       8.690  24.426  27.520   1.000
+ATOM     35  C1  DFO X   6       9.914  23.728  29.629   1.000
+ATOM     36  H1  DFO X   6      11.666  22.974  28.026   1.000
+CONECT   31   32               
+CONECT   31   33               
+CONECT   32   34               
+CONECT   32   35               
+CONECT   31   36               
+REMARK Residue 7

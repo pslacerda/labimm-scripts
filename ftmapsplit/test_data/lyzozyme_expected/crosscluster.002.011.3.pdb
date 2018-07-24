@@ -1,0 +1,8 @@
+ATOM     14  C2  EOL X   3      10.855  24.198  27.797   1.000
+ATOM     15  C1  EOL X   3      10.040  23.544  28.912   1.000
+ATOM     16  O   EOL X   3      11.575  23.195  27.081   1.000
+ATOM     17  H1  EOL X   3      12.058  22.687  27.724   1.000
+CONECT   14   15               
+CONECT   14   16               
+CONECT   16   17               
+REMARK Residue 4

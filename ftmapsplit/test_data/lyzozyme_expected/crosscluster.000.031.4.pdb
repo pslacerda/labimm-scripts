@@ -1,0 +1,13 @@
+ATOM     15  CG  BEN Z   4       2.208  22.620  24.978   1.000
+ATOM     16  CD1 BEN Z   4       2.445  23.224  26.234   1.000
+ATOM     17  CE1 BEN Z   4       3.738  23.692  26.563   1.000
+ATOM     18  CZ  BEN Z   4       4.795  23.558  25.633   1.000
+ATOM     19  CE2 BEN Z   4       4.559  22.953  24.377   1.000
+ATOM     20  CD2 BEN Z   4       3.266  22.483  24.050   1.000
+CONECT   15   16               
+CONECT   15   20               
+CONECT   16   17               
+CONECT   20   19               
+CONECT   17   18               
+CONECT   19   18               
+REMARK Residue 5

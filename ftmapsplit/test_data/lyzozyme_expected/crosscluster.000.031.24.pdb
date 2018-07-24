@@ -1,0 +1,12 @@
+ATOM    126  C2  DFO Z  24       6.620  23.338  23.865   1.000
+ATOM    127  N3  DFO Z  24       6.210  24.366  23.089   1.000
+ATOM    128  O4  DFO Z  24       7.019  23.450  25.018   1.000
+ATOM    129  C3  DFO Z  24       5.732  24.127  21.729   1.000
+ATOM    130  C1  DFO Z  24       6.252  25.722  23.627   1.000
+ATOM    131  H1  DFO Z  24       6.550  22.389  23.338   1.000
+CONECT  126  127               
+CONECT  126  128               
+CONECT  127  129               
+CONECT  127  130               
+CONECT  126  131               
+REMARK Residue 25

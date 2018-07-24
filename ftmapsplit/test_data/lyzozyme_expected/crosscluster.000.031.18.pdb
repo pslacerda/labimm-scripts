@@ -1,0 +1,16 @@
+ATOM     93  C   URE Z  18       5.268  24.478  22.373   1.000
+ATOM     94  O   URE Z  18       5.321  25.702  22.365   1.000
+ATOM     95  N1  URE Z  18       5.111  23.880  21.268   1.000
+ATOM     96  N2  URE Z  18       5.375  23.879  23.485   1.000
+ATOM     97  H1  URE Z  18       5.014  24.388  20.389   1.000
+ATOM     98  H2  URE Z  18       5.063  22.864  21.197   1.000
+ATOM     99  H3  URE Z  18       5.352  22.862  23.559   1.000
+ATOM    100  H4  URE Z  18       5.491  24.383  24.363   1.000
+CONECT   93   94               
+CONECT   95   93               
+CONECT   95   97               
+CONECT   95   98               
+CONECT   96   93               
+CONECT   96   99               
+CONECT   96  100               
+REMARK Residue 19

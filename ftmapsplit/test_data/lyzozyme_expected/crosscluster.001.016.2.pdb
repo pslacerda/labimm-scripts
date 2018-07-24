@@ -1,0 +1,8 @@
+ATOM      7  C1  ADY Y   2      -0.017  25.633  29.891   1.000
+ATOM      8  C2  ADY Y   2      -1.239  26.449  29.528   1.000
+ATOM      9  O1  ADY Y   2      -1.811  27.122  30.350   1.000
+ATOM     10  H1  ADY Y   2      -1.568  26.382  28.494   1.000
+CONECT    7    8               
+CONECT    8    9               
+CONECT    8   10               
+REMARK Residue 3

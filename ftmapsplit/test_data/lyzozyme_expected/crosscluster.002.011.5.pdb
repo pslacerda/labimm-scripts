@@ -1,0 +1,10 @@
+ATOM     26  CH  THS X   5      10.801  24.098  27.716   1.000
+ATOM     27  CH1 THS X   5       9.803  24.559  26.657   1.000
+ATOM     28  CH2 THS X   5      10.094  23.483  28.922   1.000
+ATOM     29  OT  THS X   5      11.693  23.153  27.133   1.000
+ATOM     30  HO  THS X   5      12.110  22.626  27.805   1.000
+CONECT   27   26               
+CONECT   26   29               
+CONECT   26   28               
+CONECT   29   30               
+REMARK Residue 6

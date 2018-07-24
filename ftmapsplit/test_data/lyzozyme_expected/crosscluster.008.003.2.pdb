@@ -1,0 +1,8 @@
+ATOM      3  C1  AMN R   2      -3.227  11.698  26.741   1.000
+ATOM      4  N1  AMN R   2      -1.954  12.072  26.109   1.000
+ATOM      5  H1  AMN R   2      -2.115  12.809  25.434   1.000
+ATOM      6  H2  AMN R   2      -1.588  11.281  25.594   1.000
+CONECT    3    4               
+CONECT    4    5               
+CONECT    4    6               
+REMARK Residue 3

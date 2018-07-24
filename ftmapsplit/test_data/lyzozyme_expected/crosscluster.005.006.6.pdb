@@ -1,0 +1,16 @@
+ATOM     21  C1  PHN U   6       1.891  21.986  33.880   1.000
+ATOM     22  C2  PHN U   6       2.273  23.059  33.045   1.000
+ATOM     23  C3  PHN U   6       2.557  24.314  33.616   1.000
+ATOM     24  C4  PHN U   6       2.457  24.471  35.015   1.000
+ATOM     25  C5  PHN U   6       2.075  23.401  35.852   1.000
+ATOM     26  C6  PHN U   6       1.792  22.146  35.278   1.000
+ATOM     27  O   PHN U   6       1.635  20.747  33.329   1.000
+ATOM     28  HO  PHN U   6       1.766  20.771  32.390   1.000
+CONECT   21   22               
+CONECT   22   23               
+CONECT   23   24               
+CONECT   24   25               
+CONECT   25   26               
+CONECT   26   21               
+CONECT   21   27               
+CONECT   27   28               

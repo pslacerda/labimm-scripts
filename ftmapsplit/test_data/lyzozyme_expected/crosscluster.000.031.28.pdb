@@ -1,0 +1,8 @@
+ATOM    143  C1  AMN Z  28       5.537  23.674  23.773   1.000
+ATOM    144  N1  AMN Z  28       6.359  22.502  24.107   1.000
+ATOM    145  H1  AMN Z  28       7.215  22.519  23.566   1.000
+ATOM    146  H2  AMN Z  28       5.870  21.657  23.839   1.000
+CONECT  143  144               
+CONECT  144  145               
+CONECT  144  146               
+REMARK Residue 29

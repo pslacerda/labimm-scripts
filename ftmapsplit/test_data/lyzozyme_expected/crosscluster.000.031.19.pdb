@@ -1,0 +1,8 @@
+ATOM    101  C   ACT Z  19       5.383  24.791  22.671   1.000
+ATOM    102  O   ACT Z  19       5.420  26.003  22.854   1.000
+ATOM    103  CH1 ACT Z  19       6.059  24.147  21.483   1.000
+ATOM    104  CH2 ACT Z  19       4.669  23.853  23.624   1.000
+CONECT  103  101               
+CONECT  101  102               
+CONECT  101  104               
+REMARK Residue 20

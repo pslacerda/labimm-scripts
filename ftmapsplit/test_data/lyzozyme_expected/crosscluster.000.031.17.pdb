@@ -1,0 +1,10 @@
+ATOM     88  CH  THS Z  17       3.375  22.361  24.225   1.000
+ATOM     89  CH1 THS Z  17       4.230  23.467  23.610   1.000
+ATOM     90  CH2 THS Z  17       2.413  22.918  25.268   1.000
+ATOM     91  OT  THS Z  17       2.644  21.681  23.203   1.000
+ATOM     92  HO  THS Z  17       3.206  21.497  22.464   1.000
+CONECT   89   88               
+CONECT   88   91               
+CONECT   88   90               
+CONECT   91   92               
+REMARK Residue 18

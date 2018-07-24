@@ -1,0 +1,9 @@
+ATOM     14  CH  THS S   4      -6.651  34.468  17.081   1.000
+ATOM     15  CH1 THS S   4      -7.353  34.390  15.724   1.000
+ATOM     16  CH2 THS S   4      -7.487  33.840  18.196   1.000
+ATOM     17  OT  THS S   4      -5.378  33.825  16.997   1.000
+ATOM     18  HO  THS S   4      -5.493  32.897  16.831   1.000
+CONECT   15   14               
+CONECT   14   17               
+CONECT   14   16               
+CONECT   17   18               

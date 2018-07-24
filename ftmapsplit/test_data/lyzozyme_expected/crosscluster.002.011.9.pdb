@@ -1,0 +1,16 @@
+ATOM     46  C   URE X   9       9.285  23.803  29.330   1.000
+ATOM     47  O   URE X   9       9.387  24.644  30.214   1.000
+ATOM     48  N1  URE X   9       8.264  23.847  28.581   1.000
+ATOM     49  N2  URE X   9      10.206  22.940  29.221   1.000
+ATOM     50  H1  URE X   9       8.108  23.179  27.827   1.000
+ATOM     51  H2  URE X   9       7.540  24.556  28.694   1.000
+ATOM     52  H3  URE X   9      10.175  22.187  28.534   1.000
+ATOM     53  H4  URE X   9      11.022  22.939  29.832   1.000
+CONECT   46   47               
+CONECT   48   46               
+CONECT   48   50               
+CONECT   48   51               
+CONECT   49   46               
+CONECT   49   52               
+CONECT   49   53               
+REMARK Residue 10

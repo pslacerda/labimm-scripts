@@ -1,0 +1,12 @@
+ATOM     15  C   BUT V   4       8.613  26.036  16.080   1.000
+ATOM     16  C1  BUT V   4       8.759  24.737  15.273   1.000
+ATOM     17  C2  BUT V   4       9.414  27.174  15.425   1.000
+ATOM     18  C3  BUT V   4       9.070  25.823  17.534   1.000
+ATOM     19  O   BUT V   4       7.262  26.407  16.085   1.000
+ATOM     20  H1  BUT V   4       6.789  25.670  16.451   1.000
+CONECT   15   16               
+CONECT   15   17               
+CONECT   15   18               
+CONECT   15   19               
+CONECT   19   20               
+REMARK Residue 5

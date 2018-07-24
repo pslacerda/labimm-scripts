@@ -1,0 +1,6 @@
+ATOM     11  C1  DME W   3      -0.855  32.585   9.418   1.000
+ATOM     12  O1  DME W   3      -2.254  32.473   9.692   1.000
+ATOM     13  C2  DME W   3      -3.025  32.926   8.576   1.000
+CONECT   11   12               
+CONECT   12   13               
+REMARK Residue 4

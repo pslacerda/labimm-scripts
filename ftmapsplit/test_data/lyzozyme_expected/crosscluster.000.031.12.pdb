@@ -1,0 +1,8 @@
+ATOM     59  C1  ADY Z  12       4.951  23.902  23.185   1.000
+ATOM     60  C2  ADY Z  12       5.159  24.589  21.851   1.000
+ATOM     61  O1  ADY Z  12       5.405  25.770  21.792   1.000
+ATOM     62  H1  ADY Z  12       5.068  23.959  20.969   1.000
+CONECT   59   60               
+CONECT   60   61               
+CONECT   60   62               
+REMARK Residue 13

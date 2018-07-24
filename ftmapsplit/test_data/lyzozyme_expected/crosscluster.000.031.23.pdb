@@ -1,0 +1,8 @@
+ATOM    122  C1  AMN Z  23       5.445  24.355  22.219   1.000
+ATOM    123  N1  AMN Z  23       5.172  25.433  21.259   1.000
+ATOM    124  H1  AMN Z  23       4.210  25.372  20.951   1.000
+ATOM    125  H2  AMN Z  23       5.738  25.297  20.431   1.000
+CONECT  122  123               
+CONECT  123  124               
+CONECT  123  125               
+REMARK Residue 24

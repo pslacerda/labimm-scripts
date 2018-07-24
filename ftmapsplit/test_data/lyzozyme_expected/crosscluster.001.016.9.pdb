@@ -1,0 +1,8 @@
+ATOM     48  C   ACT Y   9      -0.633  26.324  30.688   1.000
+ATOM     49  O   ACT Y   9      -1.586  27.033  30.383   1.000
+ATOM     50  CH1 ACT Y   9      -0.027  26.343  32.077   1.000
+ATOM     51  CH2 ACT Y   9       0.019  25.388  29.695   1.000
+CONECT   50   48               
+CONECT   48   49               
+CONECT   48   51               
+REMARK Residue 10

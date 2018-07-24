@@ -1,0 +1,12 @@
+ATOM     73  N1  ACD Y  14       1.812  24.686  28.798   1.000
+ATOM     74  C2  ACD Y  14       1.385  25.400  29.852   1.000
+ATOM     75  C3  ACD Y  14      -0.116  25.600  29.881   1.000
+ATOM     76  O4  ACD Y  14       2.118  25.862  30.719   1.000
+ATOM     77  H1  ACD Y  14       2.786  24.503  28.671   1.000
+ATOM     78  H2  ACD Y  14       1.167  24.330  28.123   1.000
+CONECT   73   74               
+CONECT   73   77               
+CONECT   73   78               
+CONECT   74   75               
+CONECT   74   76               
+REMARK Residue 15

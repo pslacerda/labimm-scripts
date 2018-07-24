@@ -1,0 +1,12 @@
+ATOM     50  N1  ACD Z  10       5.198  23.908  21.297   1.000
+ATOM     51  C2  ACD Z  10       5.237  24.650  22.412   1.000
+ATOM     52  C3  ACD Z  10       5.010  23.846  23.675   1.000
+ATOM     53  O4  ACD Z  10       5.429  25.860  22.435   1.000
+ATOM     54  H1  ACD Z  10       5.056  22.919  21.345   1.000
+ATOM     55  H2  ACD Z  10       5.304  24.334  20.398   1.000
+CONECT   50   51               
+CONECT   50   54               
+CONECT   50   55               
+CONECT   51   52               
+CONECT   51   53               
+REMARK Residue 11

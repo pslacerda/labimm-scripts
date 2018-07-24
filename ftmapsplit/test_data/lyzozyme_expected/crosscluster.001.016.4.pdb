@@ -1,0 +1,6 @@
+ATOM     17  C1  ACN Y   4       0.129  25.406  30.122   1.000
+ATOM     18  C2  ACN Y   4      -0.916  26.295  29.626   1.000
+ATOM     19  N   ACN Y   4      -1.740  27.010  29.231   1.000
+CONECT   17   18               
+CONECT   18   19               
+REMARK Residue 5

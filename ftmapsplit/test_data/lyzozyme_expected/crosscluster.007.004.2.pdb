@@ -1,0 +1,6 @@
+ATOM      7  C1  DME S   2      -6.466  34.314  17.576   1.000
+ATOM      8  O1  DME S   2      -6.068  34.282  16.204   1.000
+ATOM      9  C2  DME S   2      -7.168  34.605  15.350   1.000
+CONECT    7    8               
+CONECT    8    9               
+REMARK Residue 3

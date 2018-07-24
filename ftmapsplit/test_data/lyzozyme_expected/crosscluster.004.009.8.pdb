@@ -1,0 +1,13 @@
+ATOM     38  C1  CHX V   8       9.493  25.085  18.872   1.000
+ATOM     39  C2  CHX V   8       9.753  26.075  17.729   1.000
+ATOM     40  C3  CHX V   8       9.006  25.664  16.455   1.000
+ATOM     41  C4  CHX V   8       9.368  24.233  16.040   1.000
+ATOM     42  C5  CHX V   8       9.108  23.243  17.182   1.000
+ATOM     43  C6  CHX V   8       9.853  23.653  18.458   1.000
+CONECT   38   39               
+CONECT   38   43               
+CONECT   39   40               
+CONECT   40   41               
+CONECT   41   42               
+CONECT   42   43               
+REMARK Residue 9

@@ -1,0 +1,12 @@
+ATOM     29  C   BUT W   6      -2.736  33.207   8.369   1.000
+ATOM     30  C1  BUT W   6      -1.326  33.129   8.979   1.000
+ATOM     31  C2  BUT W   6      -2.859  32.268   7.158   1.000
+ATOM     32  C3  BUT W   6      -3.075  34.643   7.934   1.000
+ATOM     33  O   BUT W   6      -3.658  32.803   9.349   1.000
+ATOM     34  H1  BUT W   6      -4.501  32.769   8.916   1.000
+CONECT   29   30               
+CONECT   29   31               
+CONECT   29   32               
+CONECT   29   33               
+CONECT   33   34               
+REMARK Residue 7

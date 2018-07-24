@@ -1,0 +1,20 @@
+ATOM      1  C1  ETH R   1      -4.159  12.052  27.548   1.000
+ATOM      2  C2  ETH R   1      -2.990  11.690  26.615   1.000
+ATOM      3  C1  AMN R   2      -3.227  11.698  26.741   1.000
+ATOM      4  N1  AMN R   2      -1.954  12.072  26.109   1.000
+ATOM      5  H1  AMN R   2      -2.115  12.809  25.434   1.000
+ATOM      6  H2  AMN R   2      -1.588  11.281  25.594   1.000
+ATOM      7  C1  ADY R   3      -3.078  11.668  26.617   1.000
+ATOM      8  C2  ADY R   3      -3.976  12.222  27.702   1.000
+ATOM      9  O1  ADY R   3      -4.491  13.309  27.598   1.000
+ATOM     10  H1  ADY R   3      -4.120  11.584  28.570   1.000
+REMARK Residue 1
+CONECT    1    2               
+REMARK Residue 2
+CONECT    3    4               
+CONECT    4    5               
+CONECT    4    6               
+REMARK Residue 3
+CONECT    7    8               
+CONECT    8    9               
+CONECT    8   10               

@@ -1,0 +1,17 @@
+ATOM    109  C1  PHN Z  21       5.549  24.140  21.664   1.000
+ATOM    110  C2  PHN Z  21       5.211  24.571  22.963   1.000
+ATOM    111  C3  PHN Z  21       6.153  25.300  23.715   1.000
+ATOM    112  C4  PHN Z  21       7.418  25.574  23.154   1.000
+ATOM    113  C5  PHN Z  21       7.758  25.137  21.856   1.000
+ATOM    114  C6  PHN Z  21       6.811  24.421  21.101   1.000
+ATOM    115  O   PHN Z  21       4.619  23.438  20.933   1.000
+ATOM    116  HO  PHN Z  21       4.906  23.369  20.033   1.000
+CONECT  109  110               
+CONECT  110  111               
+CONECT  111  112               
+CONECT  112  113               
+CONECT  113  114               
+CONECT  114  109               
+CONECT  109  115               
+CONECT  115  116               
+REMARK Residue 22

@@ -1,0 +1,8 @@
+ATOM     63  C1  AMN Z  13       2.731  22.616  24.901   1.000
+ATOM     64  N1  AMN Z  13       2.077  21.641  24.017   1.000
+ATOM     65  H1  AMN Z  13       2.506  21.672  23.101   1.000
+ATOM     66  H2  AMN Z  13       1.105  21.896  23.896   1.000
+CONECT   63   64               
+CONECT   64   65               
+CONECT   64   66               
+REMARK Residue 14

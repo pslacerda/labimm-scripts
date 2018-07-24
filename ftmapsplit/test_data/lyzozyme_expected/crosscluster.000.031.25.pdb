@@ -1,0 +1,6 @@
+ATOM    132  C1  DME Z  25       5.489  24.556  21.850   1.000
+ATOM    133  O1  DME Z  25       5.531  25.854  22.449   1.000
+ATOM    134  C2  DME Z  25       6.375  25.853  23.603   1.000
+CONECT  132  133               
+CONECT  133  134               
+REMARK Residue 26

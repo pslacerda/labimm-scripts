@@ -1,0 +1,13 @@
+ATOM     40  C1  CHX X   8       8.147  24.944  26.581   1.000
+ATOM     41  C2  CHX X   8       7.878  24.292  27.943   1.000
+ATOM     42  C3  CHX X   8       9.106  24.383  28.856   1.000
+ATOM     43  C4  CHX X   8      10.343  23.780  28.184   1.000
+ATOM     44  C5  CHX X   8      10.614  24.435  26.825   1.000
+ATOM     45  C6  CHX X   8       9.388  24.344  25.909   1.000
+CONECT   40   41               
+CONECT   40   45               
+CONECT   41   42               
+CONECT   42   43               
+CONECT   43   44               
+CONECT   44   45               
+REMARK Residue 9

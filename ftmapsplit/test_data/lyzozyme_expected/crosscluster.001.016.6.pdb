@@ -1,0 +1,13 @@
+ATOM     29  CG  BEN Y   6       1.103  25.323  29.561   1.000
+ATOM     30  CD1 BEN Y   6       2.336  24.871  29.035   1.000
+ATOM     31  CE1 BEN Y   6       3.360  24.435  29.908   1.000
+ATOM     32  CZ  BEN Y   6       3.150  24.446  31.307   1.000
+ATOM     33  CE2 BEN Y   6       1.917  24.898  31.833   1.000
+ATOM     34  CD2 BEN Y   6       0.893  25.337  30.960   1.000
+CONECT   29   30               
+CONECT   29   34               
+CONECT   30   31               
+CONECT   34   33               
+CONECT   31   32               
+CONECT   33   32               
+REMARK Residue 7

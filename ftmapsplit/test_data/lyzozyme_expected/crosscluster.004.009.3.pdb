@@ -1,0 +1,8 @@
+ATOM     11  C1  ADY V   3       9.080  23.241  17.305   1.000
+ATOM     12  C2  ADY V   3       9.406  22.942  18.754   1.000
+ATOM     13  O1  ADY V   3      10.451  23.297  19.245   1.000
+ATOM     14  H1  ADY V   3       8.648  22.394  19.308   1.000
+CONECT   11   12               
+CONECT   12   13               
+CONECT   12   14               
+REMARK Residue 4

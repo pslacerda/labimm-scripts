@@ -1,0 +1,19 @@
+ATOM    153  C1  BDY Z  30       7.055  24.622  21.484   1.000
+ATOM    154  C2  BDY Z  30       7.423  25.443  22.574   1.000
+ATOM    155  C3  BDY Z  30       6.570  25.546  23.689   1.000
+ATOM    156  C4  BDY Z  30       5.360  24.822  23.696   1.000
+ATOM    157  C5  BDY Z  30       4.976  24.014  22.607   1.000
+ATOM    158  C6  BDY Z  30       5.831  23.914  21.493   1.000
+ATOM    159  C7  BDY Z  30       7.961  24.497  20.337   1.000
+ATOM    160  H1  BDY Z  30       7.698  23.697  19.646   1.000
+ATOM    161  O1  BDY Z  30       8.929  25.197  20.155   1.000
+CONECT  153  154               
+CONECT  153  158               
+CONECT  154  155               
+CONECT  155  156               
+CONECT  156  157               
+CONECT  157  158               
+CONECT  153  159               
+CONECT  159  160               
+CONECT  159  161               
+REMARK Residue 31

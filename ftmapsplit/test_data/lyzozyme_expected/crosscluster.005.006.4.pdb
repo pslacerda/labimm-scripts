@@ -1,0 +1,6 @@
+ATOM     15  C1  ACN U   4       1.494  21.969  34.227   1.000
+ATOM     16  C2  ACN U   4       2.111  23.035  33.443   1.000
+ATOM     17  N   ACN U   4       2.607  23.879  32.821   1.000
+CONECT   15   16               
+CONECT   16   17               
+REMARK Residue 5

@@ -1,0 +1,6 @@
+ATOM     37  C1  ACN X   7       9.423  24.302  25.484   1.000
+ATOM     38  C2  ACN X   7      10.463  23.896  26.424   1.000
+ATOM     39  N   ACN X   7      11.288  23.562  27.168   1.000
+CONECT   37   38               
+CONECT   38   39               
+REMARK Residue 8

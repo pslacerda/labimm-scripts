@@ -1,0 +1,13 @@
+ATOM      5  CG  BEN W   2      -3.117  32.598   7.639   1.000
+ATOM      6  CD1 BEN W   2      -1.993  32.311   6.831   1.000
+ATOM      7  CE1 BEN W   2      -0.713  32.179   7.419   1.000
+ATOM      8  CZ  BEN W   2      -0.557  32.329   8.817   1.000
+ATOM      9  CE2 BEN W   2      -1.682  32.613   9.626   1.000
+ATOM     10  CD2 BEN W   2      -2.961  32.748   9.037   1.000
+CONECT    5    6               
+CONECT    5   10               
+CONECT    6    7               
+CONECT   10    9               
+CONECT    7    8               
+CONECT    9    8               
+REMARK Residue 3

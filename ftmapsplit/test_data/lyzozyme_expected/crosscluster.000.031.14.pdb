@@ -1,0 +1,19 @@
+ATOM     67  C1  BDY Z  14       4.893  23.103  24.827   1.000
+ATOM     68  C2  BDY Z  14       4.672  23.673  26.101   1.000
+ATOM     69  C3  BDY Z  14       3.373  23.690  26.645   1.000
+ATOM     70  C4  BDY Z  14       2.312  23.133  25.902   1.000
+ATOM     71  C5  BDY Z  14       2.519  22.568  24.628   1.000
+ATOM     72  C6  BDY Z  14       3.819  22.556  24.088   1.000
+ATOM     73  C7  BDY Z  14       6.255  23.079  24.277   1.000
+ATOM     74  H1  BDY Z  14       6.354  22.561  23.324   1.000
+ATOM     75  O1  BDY Z  14       7.209  23.581  24.821   1.000
+CONECT   67   68               
+CONECT   67   72               
+CONECT   68   69               
+CONECT   69   70               
+CONECT   70   71               
+CONECT   71   72               
+CONECT   67   73               
+CONECT   73   74               
+CONECT   73   75               
+REMARK Residue 15

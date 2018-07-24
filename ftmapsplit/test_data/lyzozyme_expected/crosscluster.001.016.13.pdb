@@ -1,0 +1,17 @@
+ATOM     65  C1  PHN Y  13       0.131  25.143  30.420   1.000
+ATOM     66  C2  PHN Y  13       1.058  26.010  29.806   1.000
+ATOM     67  C3  PHN Y  13       2.013  26.675  30.598   1.000
+ATOM     68  C4  PHN Y  13       2.023  26.457  31.992   1.000
+ATOM     69  C5  PHN Y  13       1.097  25.590  32.609   1.000
+ATOM     70  C6  PHN Y  13       0.145  24.925  31.814   1.000
+ATOM     71  O   PHN Y  13      -0.774  24.472  29.627   1.000
+ATOM     72  HO  PHN Y  13      -1.319  23.889  30.142   1.000
+CONECT   65   66               
+CONECT   66   67               
+CONECT   67   68               
+CONECT   68   69               
+CONECT   69   70               
+CONECT   70   65               
+CONECT   65   71               
+CONECT   71   72               
+REMARK Residue 14

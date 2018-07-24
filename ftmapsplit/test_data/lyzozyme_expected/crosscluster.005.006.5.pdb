@@ -1,0 +1,6 @@
+ATOM     18  C1  DME U   5       1.488  21.967  34.262   1.000
+ATOM     19  O1  DME U   5       2.348  22.447  33.225   1.000
+ATOM     20  C2  DME U   5       2.264  23.869  33.106   1.000
+CONECT   18   19               
+CONECT   19   20               
+REMARK Residue 6

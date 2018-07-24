@@ -1,0 +1,12 @@
+ATOM    137  N1  ACD Z  27       8.252  23.685  24.772   1.000
+ATOM    138  C2  ACD Z  27       6.977  24.005  25.035   1.000
+ATOM    139  C3  ACD Z  27       5.983  23.349  24.099   1.000
+ATOM    140  O4  ACD Z  27       6.622  24.756  25.936   1.000
+ATOM    141  H1  ACD Z  27       8.477  23.051  24.031   1.000
+ATOM    142  H2  ACD Z  27       9.000  24.069  25.313   1.000
+CONECT  137  138               
+CONECT  137  141               
+CONECT  137  142               
+CONECT  138  139               
+CONECT  138  140               
+REMARK Residue 28

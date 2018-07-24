@@ -1,0 +1,16 @@
+ATOM     26  C   URE V   6       9.161  23.206  17.933   1.000
+ATOM     27  O   URE V   6      10.382  23.203  18.021   1.000
+ATOM     28  N1  URE V   6       8.644  23.418  16.796   1.000
+ATOM     29  N2  URE V   6       8.483  22.997  18.982   1.000
+ATOM     30  H1  URE V   6       7.633  23.432  16.656   1.000
+ATOM     31  H2  URE V   6       9.208  23.583  15.963   1.000
+ATOM     32  H3  URE V   6       8.917  22.798  19.883   1.000
+ATOM     33  H4  URE V   6       7.463  23.003  18.974   1.000
+CONECT   26   27               
+CONECT   28   26               
+CONECT   28   30               
+CONECT   28   31               
+CONECT   29   26               
+CONECT   29   32               
+CONECT   29   33               
+REMARK Residue 7

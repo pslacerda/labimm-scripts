@@ -1,0 +1,8 @@
+ATOM     10  C   ACT S   3      -6.490  34.175  16.260   1.000
+ATOM     11  O   ACT S   3      -5.400  33.790  15.857   1.000
+ATOM     12  CH1 ACT S   3      -7.575  34.636  15.310   1.000
+ATOM     13  CH2 ACT S   3      -6.819  34.236  17.736   1.000
+CONECT   12   10               
+CONECT   10   11               
+CONECT   10   13               
+REMARK Residue 4

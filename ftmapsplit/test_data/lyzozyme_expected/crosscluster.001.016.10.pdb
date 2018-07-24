@@ -1,0 +1,12 @@
+ATOM     52  C2  DFO Y  10      -1.105  26.348  29.649   1.000
+ATOM     53  N3  DFO Y  10       0.024  25.941  30.268   1.000
+ATOM     54  O4  DFO Y  10      -2.001  26.993  30.179   1.000
+ATOM     55  C3  DFO Y  10       1.063  25.232  29.526   1.000
+ATOM     56  C1  DFO Y  10       0.196  26.217  31.692   1.000
+ATOM     57  H1  DFO Y  10      -1.123  26.034  28.609   1.000
+CONECT   52   53               
+CONECT   52   54               
+CONECT   53   55               
+CONECT   53   56               
+CONECT   52   57               
+REMARK Residue 11

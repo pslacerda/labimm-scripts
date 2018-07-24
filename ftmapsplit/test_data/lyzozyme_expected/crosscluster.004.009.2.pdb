@@ -1,0 +1,8 @@
+ATOM      7  C2  EOL V   2       9.111  23.321  18.707   1.000
+ATOM      8  C1  EOL V   2       8.935  23.119  17.205   1.000
+ATOM      9  O   EOL V   2       9.663  22.135  19.271   1.000
+ATOM     10  H1  EOL V   2       8.942  21.529  19.394   1.000
+CONECT    7    8               
+CONECT    7    9               
+CONECT    9   10               
+REMARK Residue 3

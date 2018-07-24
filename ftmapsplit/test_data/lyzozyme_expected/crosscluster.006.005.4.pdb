@@ -1,0 +1,8 @@
+ATOM     15  C   ACT T   4       3.035  24.488  30.187   1.000
+ATOM     16  O   ACT T   4       3.833  23.843  29.517   1.000
+ATOM     17  CH1 ACT T   4       3.093  24.511  31.700   1.000
+ATOM     18  CH2 ACT T   4       1.933  25.305  29.545   1.000
+CONECT   17   15               
+CONECT   15   16               
+CONECT   15   18               
+REMARK Residue 5
